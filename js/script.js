@@ -266,3 +266,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     observer.observe(numberBlock);
 });
+
+
+document.addEventListener('DOMContentLoaded', swapTexts);
+window.addEventListener('resize', swapTexts);
+function swapTexts() {
+    const descr = document.querySelector('.services__descr');
+    const name = document.querySelector('.services__name');
+    const container = document.querySelector('.services__top');
+    if (window.innerWidth < 768) {
+        if (!container.classList.contains('swapped')) {
+            const temp = descr.textContent;
+            descr.textContent = name.textContent.replace(/<br>/g, ' ');
+            name.textContent = temp;
+            container.classList.add('swapped');
+        }
+    } else {
+        if (container.classList.contains('swapped')) {
+            const temp = descr.textContent;
+            descr.textContent = name.textContent;
+            name.textContent = temp;
+            container.classList.remove('swapped');
+        }
+    }
+}
