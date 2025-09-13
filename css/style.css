@@ -1211,7 +1211,6 @@ mark{
 /* footer */
 .footer{
     margin-top: 100px;
-    border-top: 1px solid #262932;
     padding-bottom: 80px;
 }
 .footer__bottom{
@@ -1223,6 +1222,7 @@ mark{
     border-bottom: 1px solid #262932;
 }
 .footer__top{
+    border-top: 1px solid #262932;
     padding: 10px 0 28px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
