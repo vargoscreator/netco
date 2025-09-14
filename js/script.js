@@ -290,3 +290,32 @@ function swapTexts() {
         }
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".popup__form");
+  const requiredInputs = form.querySelectorAll(".input-required");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let hasError = false;
+    requiredInputs.forEach(input => {
+      const parent = input.closest(".popup__form-block");
+      if (!input.value.trim()) {
+        parent.classList.add("error-input");
+        hasError = true;
+      } else {
+        parent.classList.remove("error-input");
+      }
+    });
+    if (!hasError) {
+      form.reset();
+    }
+  });
+  requiredInputs.forEach(input => {
+    input.addEventListener("input", () => {
+      const parent = input.closest(".popup__form-block");
+      if (input.value.trim()) {
+        parent.classList.remove("error-input");
+      }
+    });
+  });
+});

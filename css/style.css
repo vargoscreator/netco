@@ -1439,6 +1439,7 @@ textarea{
     font-size: 10px;
     line-height: 135%;
     display: none;
+    margin-left: auto;
 }
 .popup__form-agree{
     display: flex;
@@ -1487,6 +1488,15 @@ textarea{
 }
 .popup__form-block + .popup__form-block{
     margin-top: 22px;
+}
+.popup__form-block.error-input .popup__form-error{
+    display: block;
+}
+.popup__form-block.error-input .popup__form-label{
+    color: #E60A14;
+}
+.popup__form-block.error-input{
+    margin-bottom: -16px;
 }
 @media (max-width: 1440px) {
 
