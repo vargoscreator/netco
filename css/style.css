@@ -889,7 +889,7 @@ mark{
     grid-template-columns: repeat(4, 1fr);
 }
 .whoisit__item{
-    border-left: 3px solid #262932;
+    border-left: 1px solid #262932;
     overflow: hidden;
     min-height: 208px;
 }
