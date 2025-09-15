@@ -294,6 +294,10 @@ function swapTexts() {
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".popup__form");
   const requiredInputs = form.querySelectorAll(".input-required");
+  const select = form.querySelector('.popup__form-select');
+  const selectName = select.querySelector('.popup__form-select--name');
+  const hiddenInput = select.querySelector('input[type="hidden"]');
+  const options = select.querySelectorAll('.popup__form-select--btn');
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     let hasError = false;
@@ -306,8 +310,19 @@ document.addEventListener("DOMContentLoaded", () => {
         parent.classList.remove("error-input");
       }
     });
+    const selectParent = select.closest(".popup__form-block");
+    if (!hiddenInput.value.trim()) {
+      selectParent.classList.add("error-input");
+      hasError = true;
+    } else {
+      selectParent.classList.remove("error-input");
+    }
+
     if (!hasError) {
       form.reset();
+      selectName.textContent = "Service Requested";
+      selectName.classList.remove("selected");
+      hiddenInput.value = "";
     }
   });
   requiredInputs.forEach(input => {
@@ -317,5 +332,24 @@ document.addEventListener("DOMContentLoaded", () => {
         parent.classList.remove("error-input");
       }
     });
+  });
+  selectName.addEventListener('click', () => {
+    select.classList.toggle('active');
+  });
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      const value = option.textContent;
+      selectName.textContent = value;
+      selectName.classList.add('selected');
+      hiddenInput.value = value;
+      select.classList.remove('active');
+      const selectParent = select.closest(".popup__form-block");
+      selectParent.classList.remove("error-input");
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!select.contains(e.target)) {
+      select.classList.remove('active');
+    }
   });
 });

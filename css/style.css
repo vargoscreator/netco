@@ -129,12 +129,6 @@ button{
 .btn-2:hover{
     background: #E60A14;
 }
-.btn-2,
-.btn{
-    max-width: 144px;
-    height: 35px;
-    font-size: 14px;
-}
 mark{
     color: #E60A14;
 }
@@ -156,6 +150,12 @@ mark{
         max-width: 480px;
     }
     html,body{
+        font-size: 14px;
+    }
+    .btn-2,
+    .btn{
+        max-width: 144px;
+        height: 35px;
         font-size: 14px;
     }
 }
@@ -1352,6 +1352,7 @@ a.footer__link:hover{
     pointer-events: none;
     transition: all .2s ease;
     z-index: 111;
+    overflow: auto;
 }
 .popup.show{
     opacity: 1;
@@ -1497,6 +1498,58 @@ textarea{
 }
 .popup__form-block.error-input{
     margin-bottom: -16px;
+}
+.popup__form-select{
+    border-bottom: 1px solid #262932;
+}
+.popup__form-select--name{
+    font-size: 14px;
+    color: #B4B4B4;
+    line-height: 115%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    cursor: pointer;
+}
+.popup__form-select--name::after{
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7' fill='none'%3E%3Cpath d='M0.899414 0.555664L5.94971 5.60596L11 0.555664' stroke='black'/%3E%3C/svg%3E");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+}
+.popup__form-select--btn {
+    cursor: pointer;
+    background: #F5F5F5;
+    padding: 8px 0;
+    min-height: 33px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 115%;
+}
+.popup__form-select--content{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 10px;
+}
+.popup__form-select.active .popup__form-select--content{
+    display: flex;
+}
+.popup__form-select--name.selected{
+    color: #262932;
+}
+.popup__form-select.active .popup__form-select--name.selected{
+    color: #fff;
+}
+.popup__form-select--btn:hover{
+    background-color: #e4e4e4;
 }
 @media (max-width: 1440px) {
 
