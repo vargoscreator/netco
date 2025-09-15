@@ -320,9 +320,6 @@ mark{
     }
 }
 /* hero */
-.hero{
-    overflow: hidden;
-}
 .hero__top{
     display: flex;
     align-items: start;
@@ -418,7 +415,7 @@ mark{
     margin-right: 72px;
 }
 .hero__icons{
-    padding: 51px 90px 71px 0;
+    padding: 56px 90px 71px 0;
     gap: 10px;
     max-width: 670px;
     margin: 0 0 0 auto;
@@ -503,7 +500,7 @@ mark{
         font-size: 18px;
     }
     .hero__icons {
-        padding: 27px 60px 27px 0;
+        padding: 30px 60px 30px 0;
         max-width: 649px;
     }
     .hero__icons.animated::after {
@@ -597,10 +594,16 @@ mark{
     .hero__icons-inner{
         overflow-x: auto;
         gap: 10px;
-        padding: 20px 0 20px 100px;
+        padding: 26px 0 25px 100px;
     }
     .hero__icon img {
         max-height: 22px;
+    }
+    .hero__icons.animated::before {
+        width: 81%;
+    }
+    .hero__icons.animated::after {
+        width: 101%;
     }
 }
 @media (max-width: 480px) {
@@ -655,6 +658,12 @@ mark{
     }
     .hero__icons.animated::after {
         width: 85%;
+    }
+    .hero__icons.animated::after {
+        width: 89%;
+    }
+    .hero__icons-inner {
+        padding: 24px 0 25px 100px;
     }
 }
 .services{
