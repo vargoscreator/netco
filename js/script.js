@@ -113,7 +113,7 @@ window.addEventListener('DOMContentLoaded', () => {
     tl.from(heroLogos, {
         x: -100,
         opacity: 0,
-        stagger: 0.3,
+        stagger: 0.1,
         duration: 1
     }, 0);
     tl.from(heroLeftText, { x: -100, opacity: 0, duration: 1 }, 0.3);
@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.9
     });
 
-    observer.observe(numberBlock);
+    observer.observe(document.querySelector('.swiss__inner'));
 });
 
 
